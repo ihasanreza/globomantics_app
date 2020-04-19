@@ -20,7 +20,7 @@ app.config["ALLOWED_IMAGE_EXTENSIONS"] = ["jpeg", "jpg", "png"]
 app.config["MAX_CONTENT_LENGTH"] = 16 * 1024 * 1024
 app.config["IMAGE_UPLOADS"] = os.path.join(basedir, "uploads")
 
-app.config["TESTING"] = True
+# app.config["TESTING"] = True
 
 class PriceInput(Input):
     input_type = "number"
