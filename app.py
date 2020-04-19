@@ -22,9 +22,6 @@ app.config["IMAGE_UPLOADS"] = os.path.join(basedir, "uploads")
 
 app.config["TESTING"] = True
 
-app.config["RECAPTCHA_PUBLIC_KEY"] = "6LcQnuoUAAAAAOuD6wAhuPOxRc1KeOYTgBeqpowY"
-app.config["RECAPTCHA_PRIVATE_KEY"] = "6LcQnuoUAAAAAP4EHYFRWixiLLWOaMdbCbYltyXi"
-
 class PriceInput(Input):
     input_type = "number"
 
@@ -95,7 +92,6 @@ class BelongsToOtherFieldOption:
 class NewItemForm(ItemForm):
     category    = SelectField("Category", coerce=int)
     subcategory = SelectField("Subcategory", coerce=int, validators=[BelongsToOtherFieldOption(table="subcategories", belongs_to="category", message="Subcategory does not belong to that category.")])
-    recaptcha   = RecaptchaField()
     submit      = SubmitField("Submit")
 
 class EditItemForm(ItemForm):
